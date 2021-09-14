@@ -15,3 +15,4 @@ jobs:
         with:
           username: ${{ secrets.ARTIFACTORY_CRED_USR }}
           apikey: ${{ secrets.ARTIFACTORY_CRED_KEY }}
+          favorite-color: ${{ secrets.FAVORITE_COLOR }}

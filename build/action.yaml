@@ -1,10 +1,10 @@
 name: Build app
 description: Build app code
-# inputs:
-#   favorite-color:  
-#     description: 
-#     required: 
-#     default: 
+inputs:
+  favorite-color:  
+    description: 'You fave color'
+    required: true
+    default: blue
 # outputs:
 #   random-number:
 #     description:
@@ -13,7 +13,7 @@ runs:
   using: "composite"
   steps:
     - run: | 
-        if [[ ${{ secrets.FAVORITE_COLOR }} ==  'red' ]] then 
+        if [[ ${{ inputs.FAVORITE_COLOR }} ==  'red' ]] then 
           echo "Red is my favorite color"
         fi
       shell: bash
