@@ -1,0 +1,17 @@
+name: Test build step
+
+on: [ push, workflow_dispatch ]
+  
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run build Action
+        uses: ./build 
+        with:
+          username: ${{ secrets.ARTIFACTORY_CRED_USR }}
+          apikey: ${{ secrets.ARTIFACTORY_CRED_KEY }}
