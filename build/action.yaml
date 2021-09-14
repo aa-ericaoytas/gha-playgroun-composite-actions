@@ -13,7 +13,7 @@ runs:
   using: "composite"
   steps:
     - run: | 
-        if [[ ${{ inputs.FAVORITE_COLOR }} ==  'red' ]] then 
+        if [[ ${{ inputs.FAVORITE_COLOR }} -e  'red' ]]; then 
           echo "Red is my favorite color"
         fi
       shell: bash
